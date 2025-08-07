@@ -38,9 +38,8 @@
 
     main  {
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        border: 3px solid rgb(165, 114, 42);
         text-align: left;
-        width: 1300px;
+        width: 1200x;
         margin: 0 auto;
         }
 
@@ -48,9 +47,52 @@
             background-color: rgb(255, 251, 210);
             padding: 20px;
             border-radius: 10px;
-            
+             border: 3px solid rgb(165, 114, 42);
 
         }
+        footer {
+            background-color: beige;
+            color: rgb(165, 114, 42);
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        a {
+            color: rgb(194, 128, 41);
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .buttons {
+            text-align: right;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+
+        .buttons-vizualizacao {
+            font-size: 20px;
+            color: rgb(194, 128, 41)
+        }
+
+        .modo-grade {
+            padding-top: 20px;
+            margin: 0auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .modo-grade section {
+            width: 40%;
+        }
+
 </style>
 <body>
     <header>
@@ -61,7 +103,11 @@
             Professor de Ensino técnico
         </p>
     </header>
-    <main>
+    <div class= "buttons">
+        <button class= "buttons-visualizacao" onclick="mudarGrade()"> Vizualização Grade</button>
+        <button class= "buttons-visualizacao" onclick="mudarLista()"> Vizualização lista</button>
+    </div>
+    <main id="principal">
         <section>
             <h2>
                 Minhas habilidades
@@ -107,8 +153,21 @@
                 </li>
             </ul>
         </section>
+        <footer>
+            &copy;2025  Fernanada todos os direitos reservados 
+        </footer>
 
 
     </main>
 </body>
+<script>
+    function mudarGrade() {
+        const principal = document.getElementById('principal')
+        principal.classList.add('modo-grade')
+    }
+    function mudarLista() {
+        const principal = document.getElementById('principal')
+        principal.classList.remove('modo-grade')
+    }
+</script>
 </html>
